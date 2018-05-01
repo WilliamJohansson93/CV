@@ -1,0 +1,418 @@
+﻿@{
+    int hour = DateTime.Now.Hour;
+    int min = DateTime.Now.Minute;
+    int second = DateTime.Now.Second;
+    int date = DateTime.Now.Month - 1;
+    var day = DateTime.Now.Day;
+    var weekday = DateTime.Now.DayOfWeek;
+    string[] weekdays = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", };
+    string[] month = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+}
+@*CHECKS TO SEE IF ITS THE FIRST DAY OF THE MONTH OR 31ST DAY BECAUSE DAY 1 AND DAY 31 IS THE ONLY DATES THAT ENDS WITH 'ST' - EXAMPLE : 1ST OR 31ST*@
+@if (day == 1 || day == 31)
+{
+    @*IF HOUR IS LESS THAN 10 - IT WILL ONLY SHOW A NUMBER 9 - THEREFOR A HTML.RAW WAS ADDED WITH A NUMBER ZERO BEFORE*@
+if (hour < 10)
+{
+    @*IF SECONDS IS LESS THAN 10, ADD A ZERO BEFORE THE NUMBER*@
+if (second < 10)
+{
+    <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+}
+    @*IF MINUTES IS LESS THAN 10, ADD A ZERO BEFORE THE NUMBER*@
+else if (min < 10)
+{
+    <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+}
+    @*IF HOUR IS LESS THAN 10, ADD A ZERO BEFORE THE NUMBER*@
+else
+{
+    <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+    }
+}
+    @*SIMILAR TO THE ONE ABOVE BUT FOR MINUTES*@
+else if (min < 10)
+{
+    if (second < 10)
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+    }
+    else if (min < 10)
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+    }
+    else
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+    }
+}
+        @*SIMILAR TO THE ONE ABOVE BUT FOR SECONDS*@
+else
+{
+    if (second < 10)
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+    }
+    else if (min < 10)
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+    }
+    else
+    {
+        <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+        }
+    }
+}
+
+        @*CHECKS TO SEE IF ITS THE SECOND DAY OF THE MONTH - SO THAT THE DAY CAN END WITH 'ND' - EXAMPLE : 2ND*@
+        @if (day == 2)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+        @*CHECKS TO SEE IF ITS THE THIRD DAY OF THE MONTH - SO THAT THE DAY CAN END WITH 'ND' - EXAMPLE : 2ND*@
+        @if (day == 3)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+
+        @*CHECKS TO SEE IF ITS THE TWENTY-FIRST DAY OF THE MONTH - SO THAT THE DAY CAN END WITH 'ST' - EXAMPLE : 21ST*@
+        @if (day == 21)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("st"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+        @*CHECKS TO SEE IF ITS THE TWENTY-SECOND DAY OF THE MONTH - SO THAT THE DAY CAN END WITH 'ND' - EXAMPLE : 22ND*@
+        @if (day == 22)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("nd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+        @*CHECKS TO SEE IF ITS THE TWENTY-THIRD DAY OF THE MONTH - SO THAT THE DAY CAN END WITH 'RD' - EXAMPLE : 23RD*@
+        @if (day == 23)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("rd"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+        @*CHECKS TO SEE IF THE DAY IS BETWEEN 4 AND 20 - SO THAT THE DAY CAN END WITH 'TH' - EXAMPLE : 4TH TO 20TH*@
+        else if (day > 3 && day < 21)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+        @*CHECKS TO SEE IF THE DAY IS BETWEEN 24 AND 30 - SO THAT THE DAY CAN END WITH 'TH' - EXAMPLE : 24TH TO 30TH*@
+        @if (day >= 24 && day <= 30)
+        {
+            @*EXACTLY THE SAME AS ABOVE (LINE 14 TO 65)*@
+        if (hour < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else if (min < 10)
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+        }
+        else
+        {
+            if (second < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@Html.Raw("0")@DateTime.Now.Second</a>
+            }
+            else if (min < 10)
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @Html.Raw("0")@DateTime.Now.Hour:@Html.Raw("0")@DateTime.Now.Minute:@DateTime.Now.Second</a>
+            }
+            else
+            {
+                <a class="hidden-sm" id='clock'>@month[date] @day@Html.Raw("th"), @weekday - @DateTime.Now.Hour:@DateTime.Now.Minute:@DateTime.Now.Second</a>
+                }
+            }
+        }
+

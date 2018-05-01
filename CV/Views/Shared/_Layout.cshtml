@@ -6,9 +6,12 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <!--[if IE]>
+    <link href="~/Content/Test.css" rel="stylesheet" />
+        <![endif]-->
+    <script src="~/Scripts/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="MyApp">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -21,9 +24,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a id="Home">Home</a></li>
+                    <li><a id="AboutMe">About Me</a></li>
+                    <li><a id="Education">Education</a></li>
+                    <li><a id="WorkExperience">Work Experience</a></li>
+                    <li><a id="ContactForm">Contact Form</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,12 +36,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

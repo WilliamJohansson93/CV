@@ -385,7 +385,6 @@ img {
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 0;
   border-top: 1px solid #eeeeee;
 }
 
@@ -757,8 +756,8 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
   margin-right: auto;
   margin-left: auto;
 }
@@ -925,9 +924,9 @@ pre code {
 }
 
 @media (min-width: 768px) {
-  .container {
+  /*.container {
     max-width: 750px;
-  }
+  }*/
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -1079,9 +1078,9 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .container {
+  /*.container {
     max-width: 970px;
-  }
+  }*/
   .col-md-1,
   .col-md-2,
   .col-md-3,
@@ -1242,9 +1241,9 @@ pre code {
 }
 
 @media (min-width: 1200px) {
-  .container {
+  /*.container {
     max-width: 1170px;
-  }
+  }*/
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -4212,7 +4211,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  padding: 9px 10px;
+  padding: 19px;
   margin-top: 8px;
   margin-right: 15px;
   margin-bottom: 8px;
@@ -4501,12 +4500,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+background-color: #19222f;
+    border-color: #33364c;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  padding: 25px;
+      font-family: "Tw Cen MT";
+    font-size: 17px;
+    color: #dee8ff;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -4520,7 +4522,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+      padding: 25px;
+    text-align: center;
+    font-family: "Tw Cen MT";
+    font-size: 17px;
+    color: #dee8ff;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -5572,7 +5578,7 @@ a.list-group-item:focus {
   border-radius: 3px;
 }
 
-.close {
+/*.close {
   float: right;
   font-size: 21px;
   font-weight: bold;
@@ -5581,7 +5587,7 @@ a.list-group-item:focus {
   text-shadow: 0 1px 0 #ffffff;
   opacity: 0.2;
   filter: alpha(opacity=20);
-}
+}*/
 
 .close:hover,
 .close:focus {
@@ -5610,7 +5616,7 @@ body.modal-open,
   margin-right: 15px;
 }
 
-.modal {
+/*.modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -5620,7 +5626,7 @@ body.modal-open,
   display: none;
   overflow: auto;
   overflow-y: scroll;
-}
+}*/
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);

@@ -1,0 +1,453 @@
+﻿#profile, #skills, #skills > div {
+    padding: 0;
+}
+
+    #profile > div:first-child {
+        padding-top: 2.5%;
+        /*padding: 3.5% 4% 8%;*/
+        padding: 2.5% 4% 3%;
+        width: 100%;
+        background: linear-gradient(rgba(10, 10, 31, 0), rgba(10, 10, 31, 0.8)) 0% 0% / cover, url(Images/starry-sky-2099828_1920.jpg) 0% 0%;
+        background-size: cover;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow: hidden;
+    }
+
+#profileInfo > div {
+    padding-bottom: 10px;
+}
+
+#profile > div:first-child > div {
+    overflow: hidden;
+    font-family: "Tw Cen MT";
+    margin: 0px;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    margin-top: 25PX;
+}
+
+    #profile > div:first-child > div > img {
+        width: 190px;
+        image-rendering: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        display: block;
+        border-radius: 106px;
+        height: 190px;
+    }
+
+#profile > div > div > div > p, #profile > div > div > img {
+    color: transparent;
+    margin: 0px;
+}
+
+
+
+
+/*////////////////////////SKILLS///////////////////////////////////*/
+#skills {
+    margin-top: 25px;
+    background: #f7f7f7;
+}
+
+    #skills > div > p {
+        font-weight: bold;
+        font-family: "Tw Cen MT";
+        margin: 0px 0px 5px;
+        text-align: center;
+    }
+
+    #skills > div:nth-child(odd) > div > div {
+        float: right;
+        border-radius: 5px;
+        width: 0;
+    }
+
+    #skills > div:nth-child(even) > div > div {
+        border-radius: 5px;
+        width: 0;
+    }
+
+    #skills > div > div > div {
+        background-color: rgb(15, 58, 78);
+    }
+
+    #skills > div > div > p {
+        overflow: hidden;
+        color: white !important;
+    }
+
+        #skills > div > div > p > span:last-child::after {
+            content: '%';
+        }
+
+    #skills > div:nth-child(odd) > div {
+        margin-bottom: 15px;
+        border: 2px solid #38bfff;
+        border-radius: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-right: 3px;
+    }
+
+    #skills > div:nth-child(even) > div {
+        margin-bottom: 15px;
+        border: 2px solid #38bfff;
+        border-radius: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 3px;
+    }
+
+    #skills > div > div {
+        overflow: hidden;
+    }
+
+        #skills > div > div #skills > div:nth-child(odd) > div > div {
+            float: right;
+            padding: 0;
+        }
+
+#bio, #education, #workExperience, #contact {
+    overflow: hidden;
+    display: none;
+}
+
+    #bio > h1, #education > h1, #workExperience > h1, #contact > h1 {
+        position: relative;
+        text-align: center;
+    }
+
+        #bio > h1 > span, #education > h1 > span, #workExperience > h1 > span, #contact > h1 > span {
+            font-weight: bold;
+            top: -2px;
+            font-family: "Tw Cen MT";
+            background: rgb(247, 247, 247);
+            padding: 0 15px;
+            position: relative;
+        }
+
+        #bio > h1:before, #education > h1:before, #workExperience > h1:before, #contact > h1:before {
+            background: #ddd;
+            content: "";
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            left: 0;
+        }
+
+    #bio > div > p, #education > div > p, #workExperience > div > p {
+        overflow: hidden;
+        font-family: "Tw Cen MT";
+        font-size: 19px;
+    }
+
+        #education > div > p:first-child {
+            text-align: center;
+        }
+
+    #education > div, #bio > div {
+        overflow: hidden;
+    }
+
+        #education > div > p:last-child > span, #workExperience > div > p:last-child > span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+#dateWrkExp {
+    padding-top: 35px;
+    transition: 0.2s;
+}
+
+    #dateWrkExp > div > p {
+        font-family: "Tw Cen MT";
+        color: black !important;
+    }
+
+    #dateWrkExp > div:first-child {
+        height: 170px;
+        border: 1px solid rgba(128, 128, 128, 0.4);
+        font-weight: bold;
+        background-color: rgb(218, 218, 218);
+        text-align: center;
+        padding: 74.7px 26px;
+        color: black !important;
+    }
+
+    #dateWrkExp > div:last-child {
+        height: 170.19px;
+        padding: 46px 60px 50px;
+        border-radius: 0px 5px 5px 0px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px, rgba(0, 0, 0, 0.04) 0px 2px 10px 0px;
+        border-width: 1px 1px 1px 0px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-top-color: rgba(128, 128, 128, 0.4);
+        border-right-color: rgba(128, 128, 128, 0.4);
+        border-bottom-color: rgba(128, 128, 128, 0.4);
+    }
+
+        #dateWrkExp > div:last-child > p:first-child {
+            margin-bottom: 10px;
+            word-spacing: 3px;
+            font-size: 17px;
+            color: black !important;
+            font-weight: bold;
+        }
+
+    #dateWrkExp:hover {
+        padding-bottom: 10px;
+        transition: 0.2s ease-in-out;
+        padding-top: 25px;
+    }
+
+        #dateWrkExp:hover > div {
+            box-shadow: rgba(0, 0, 0, 0.38) 0px 3px 12px 0px;
+            background: #4dbfd9;
+            background-color: #4dbfd9;
+            transition: 0.5s;
+            box-shadow: 0 3px 12px 0px rgba(0, 0, 0, 0.38);
+        }
+
+            #dateWrkExp:hover > div:first-child > p, #dateWrkExp:hover > div:last-child > p {
+                color: white !important;
+                transition: 0.3s;
+            }
+
+input.ng-touched.ng-invalid {
+    border: 1px solid rgba(255, 0, 0, 0.37);
+    background-color: rgb(255, 210, 210);
+}
+
+input.ng-touched.ng-valid {
+    border: 1px solid rgba(0, 128, 0, 0.35);
+    background-color: rgb(158, 255, 170);
+}
+
+#contact > div > form > div > select {
+    font-family: "Tw Cen MT";
+    max-width: 100% !important;
+}
+
+#contact > div > form > div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    #contact > div > form > div > input:focus ~ hr {
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    #contact > div > form > div > hr {
+        width: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-top: 1px solid #53a3ab !important;
+    }
+
+    #contact > div > form > div:last-child > button {
+        width: 100%;
+        font-family: "Tw Cen MT";
+        font-weight: bold;
+    }
+
+    #contact > div > form > div > p {
+        margin-bottom: 3px;
+        text-align: center;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+        font-family: "Tw Cen MT";
+        font-size: 15px;
+        color: black;
+    }
+
+    #contact > div > form > div > textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    #contact > div > form > div:nth-child(5), #contact > div > form > div:nth-child(8) {
+        overflow: hidden;
+    }
+
+    #contact > div > form > div > p > i {
+        font-weight: 100 !important;
+    }
+
+    #contact > div > form > div > p > span {
+        color: red;
+    }
+
+    #contact > div > form > div > input:focus {
+        outline: 0;
+    }
+
+    #contact > div > form > div > input {
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: none;
+        font-family: "Tw Cen MT";
+        text-align: center;
+        font-size: 15px;
+        max-width: 100% !important;
+    }
+
+
+.modal-content > div > p {
+    text-align: center;
+    font-family: "Tw Cen MT";
+    font-size: 25px;
+    color: black !important;
+}
+
+    .modal-content > div > p > span {
+        font-weight: bold;
+    }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    overflow: hidden;
+    background-color: rgb(94, 181, 149);
+    margin: auto;
+    padding: 20px;
+}
+
+/* The Close Button */
+.close {
+    position: relative;
+    top: -15px;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-content > p {
+    color: white;
+    font-size: 65px;
+    font-family: "Tw Cen MT";
+    font-weight: bold;
+    text-align: center;
+}
+
+    .modal-content > p > i {
+        position: relative;
+        top: 5px;
+    }
+
+#contact > div > form > p {
+    font-family: "Tw Cen MT";
+    color: rgb(29, 37, 78);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+    #contact > div > form > p > a {
+        text-decoration: underline;
+    }
+
+#dateWrkExp > div:nth-child(2) > p:nth-child(2) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+#info {
+    position: relative;
+    display: inline-block;
+}
+
+    #info > .tooltiptext {
+        font-family: "Tw Cen MT";
+        padding-bottom: 15px;
+        padding-top: 11px;
+        visibility: hidden;
+        width: 210px;
+        background-color: rgb(42, 44, 62);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: -11px;
+        left: 145%;
+    }
+
+        #info > .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent rgb(42, 44, 62) transparent transparent;
+        }
+
+    #info:hover > .tooltiptext {
+        visibility: visible;
+    }
+
+
+
+@media only screen and (max-width: 1500px) and (min-width: 768px) {
+    .nav > li:nth-child(5) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 768px) {
+    .nav > li:nth-child(4) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 768px) {
+    .nav > li:nth-child(3) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 768px) {
+    .nav > li:nth-child(2) {
+        display: none;
+    }
+}
+/*/////////////////////////IE////////////////////*/
+_:-ms-fullscreen, :root #dateWrkExp > div:last-child {
+    padding: 31.5px 60px 60px !important;
+}

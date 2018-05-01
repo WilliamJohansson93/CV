@@ -1,0 +1,65 @@
+﻿<div id="contact">
+    <h1><span>Contact Me!</span></h1>
+    <div class="col-lg-6 col-lg-push-3">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { name = "contactForm" }))
+            {
+            <div class="col-lg-6">
+                <p>Full Name <span>*</span></p>
+                <input type="text" class="form-control" name="FullName" ng-model="FullName" ng-required="true" />
+                <hr />
+                <span ng-show="contactForm.FullName.$touched && contactForm.FullName.$error.required"></span>
+            </div>
+            <div class="col-lg-6">
+                <p>Phone Number <i>(optional)</i></p>
+                <input type="text" class="form-control" id="phoneNumber" ng-model="phoneNumber" name="phoneNumber" />
+                <hr />
+            </div>
+                <div class="col-lg-6">
+                    <p>Email <span>*</span> <i id="info" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Enter your Email/Gmail</span></i></p>
+                    <input type="email" class="form-control" id="email" ng-model="email" name="email" ng-required="true" />
+                    <hr />
+                    <span ng-show="contactForm.email.$touched && contactForm.email.$error.email"></span>
+                </div>
+                <div class="col-lg-6">
+                    <p>Password <span>*</span> <i id="info" class="glyphicon glyphicon-info-sign"><span style="width: 400px !important;" class="tooltiptext">Your Email/Gmail's password is <b>SAFE</b>. (check the code)</span></i></p>
+                    <input type="password" class="form-control" id="password" ng-model="password" name="password" ng-required="true" />
+                    <hr />
+                    <span ng-show="contactForm.password.$touched && contactForm.password.$error.required"></span>
+                </div>
+                <div class="col-lg-12">
+                    <p>Select Profession <i>(optional)</i></p>
+                    <select class="form-control" ng-model="profession" name="profession">
+                        <option value="">Select a Profession</option>
+                        <option value=".NET Web developer">.NET Web developer</option>
+                        <option value="C# Developer">C# Developer</option>
+                        <option value="Frontend Developer">Frontend Developer</option>
+                        <option value="Backend Developer">Backend Developer</option>
+                        <option value="Full stack Developer (.NET)">Full stack Developer (.NET)</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                    <p>Company Name <span>*</span></p>
+                    <input type="text" class="form-control" name="CompanyName" ng-model="CompanyName" ng-required="true" />
+                    <hr />
+                    <span ng-show="contactForm.CompanyName.$touched && contactForm.CompanyName.$error.required"></span>
+                </div>
+                <div class="col-lg-6">
+                    <p>Company's Address <i>(optional)</i></p>
+                    <input type="text" class="form-control" id="cAddress" ng-model="cAddress" name="cAddress" />
+                    <hr />
+                </div>
+                <div class="col-lg-12">
+                    <p>Message <i>(optional)</i></p>
+                    <textarea class="form-control" id="message" ng-model="message" name="message"></textarea>
+                    <hr />
+                    <span ng-show="contactForm.message.$touched && contactForm.message.$error.required"></span>
+                </div>
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-info" style="width: 100%">Submit!</button>
+                </div>
+                <p style="text-align: center">
+                    If you dont want to use the contact form, send me an email to: <a>WilliamJohansson93@hotmail.com</a>
+                </p>
+        }
+    </div>
+</div>

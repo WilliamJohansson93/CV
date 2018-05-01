@@ -1,31 +1,163 @@
-﻿@{
+﻿@model CV.ViewModel.PersonalInformationViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div ng-controller="PersonalInfoController" id="profile" class="col-lg-12">
+    <div>
+        <div>
+            @*PROFILE IMAGE*@
+            <img src="~/Content/Images/swedish_flag_wallpaper_sweden_world_wallpaper_1440_900_widescreen_1829.jpg" />
+            <p style="margin-bottom: 0;">{{pi.Name}}</p>
+            <p>{{pi.Profession}}</p>
+        </div>
+        @*PERSONAL INFORMATION VIA ANGULARJS*@
+        <div id="profileInfo">
+            <div class="col-lg-4 col-xs-6">
+                <p>Date of Birth</p>
+                <p>{{pi.DateOfBirth}}</p>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <p>Location</p>
+                <p>{{pi.Location}}</p>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <p>Email</p>
+                <p>{{pi.Email}}</p>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <p>Phone number</p>
+                <p>@Html.Raw("+"){{pi.PhoneNumber}}</p>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <p>Education</p>
+                <p>{{pi.Education}}</p>
+            </div>
+            <div class="col-lg-4 col-xs-6">
+                <p>Years of Work Experience</p>
+                <p>{{pi.YearsOfExperience}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="skills" class="col-lg-10 col-lg-push-1">
+        <div title="MVC Skills: 8/10" class="col-lg-6 col-xs-6">
+            <p>MVC</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+        <div title="Frontend (HTML & CSS) Skills: 8/10" class="col-lg-6 col-xs-6">
+            <p>Frontend (HTML, CSS & JavaScript)</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+        <div title="C# Skills: 6/10" class="col-lg-6 col-xs-6">
+            <p>C#</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+        <div title="AngularJS Skills: 4/10" class="col-lg-6 col-xs-6">
+            <p>AngularJS</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+        <div title="Database (SQL MS) Skills: 4/10" class="col-lg-6 col-xs-6">
+            <p>SQL MS</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+        <div title="GitHub Skills: 5/10" class="col-lg-6 col-xs-6">
+            <p>GitHub</p>
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bio" class="col-lg-12">
+        <h1><span>About Me</span></h1>
+        <div class="col-lg-6 col-lg-push-3">
+            <p>
+                Webb- & systemutveckling är områden som intresserar mig mest. Jag är en god lyssnare, service
+                inriktad, har bra data kunskaper och talar Engelska och Svenska flytande. Jag skulle vilja vara en del av ett företag där
+                min kompetens, kunskap och erfarenhet kan utnyttjas och tillgodogöra som webbutvecklare/systemutvecklare.
+            </p>
+        </div>
+    </div>
+    <div id="education" class="col-lg-12">
+        @* EDUCATION *@
+        <h1><span>Education</span></h1>
+        @foreach (var item in Model.Education)
+        {
+            <div class="col-lg-4">
+                <p style="font-weight:bold;">@item.School</p>
+                <p>@item.Skills</p>
+                <p><span class="pull-right">@item.Date</span></p>
+            </div>
+        }
+    </div>
+    <div id="workExperience">
+        @* WORK EXPERIENCE *@
+        <h1><span>Work Experience</span></h1>
+        @foreach (var item in Model.WorkExperience)
+        {
+            <div id="dateWrkExp" class="col-lg-10 col-lg-push-1">
+                <div class="col-lg-3 col-xs-12">
+                    <p><span>@item.Date</span></p>
+                </div>
+                <div class="col-lg-9 col-xs-12">
+                    <p>@item.Job</p>
+                    <p title="@item.Tasks">
+                        <b>Arbetsuppgifter:</b> @item.Tasks
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+    @* IF EMAILSENTSUCCESS IS TRUE (WHICH IT WILL BE ONCE YOU HAVE SENT AN EMAIL) - A MODAL WILL APPEAR WITH INFORMATION*@
+    @if (Model.EmailSentSuccess)
+    {
+        <div id="myModal" class="modal">
+            <div class="modal-content col-lg-8 col-xs-12">
+                <span class="close">&times;</span>
+                <p>Success <i class="glyphicon glyphicon-ok"></i></p>
+                <div class="col-lg-12">
+                    <p><span>Full Name:</span> @Model.FullName</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>Company:</span> @Model.CompanyName</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>From:</span> @Model.Email</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>To:</span> WilliamJohansson93@hotmail.com</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>Profession:</span> @Model.Profession</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>Phone Number:</span> @Model.PhoneNumber</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>Address:</span> @Model.cAddress</p>
+                </div>
+                <div class="col-lg-12">
+                    <p><span>Message:</span> <br />@Model.Message</p>
+                </div>
+            </div>
+        </div>
+    }
+    @Html.Partial("_ContactForm")
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<script src="~/Scripts/Modal.js"></script>
+<script src="~/Scripts/AngularJS/PersonalInfo.js"></script>
